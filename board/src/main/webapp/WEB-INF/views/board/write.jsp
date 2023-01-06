@@ -11,12 +11,7 @@
 <meta charset="UTF-8">
 <title>게시물 작성</title>
 </head>
-<body>
-		<!-- 메뉴 인클루드 -->
-		<div id="nav">
-			<%@ include file="../include/nav.jsp" %>
-		</div>
-		
+<body>	
 		<form method="post">
 		
 		<label>제목</label>

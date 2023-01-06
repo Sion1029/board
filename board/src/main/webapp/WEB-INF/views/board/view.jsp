@@ -12,12 +12,6 @@
 <title>게시물 조회</title>
 </head>
 <body>
-
-	<!-- 메뉴 인클루드 -->
-	<div id="nav">
-		<%@ include file="../include/nav.jsp" %>
-	</div>
-
 <form method="post">
 
 <label>제목</label>

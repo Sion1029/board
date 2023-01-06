@@ -101,12 +101,6 @@
 		</div>
 	</div>
 
-
-	<!-- 메뉴 인클루드 -->
-	<div id="nav">
-		<%@ include file="../include/nav.jsp" %>
-	</div>
-
 	<div class="table">
 	<table class="table table-hover">
 		<thead>
