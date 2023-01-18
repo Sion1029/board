@@ -54,5 +54,22 @@ public class BoardDAOImpl implements BoardDAO {
 			sql.delete(namespace + ".delete", bno);
 	}
 		
+	// 게시물 총 갯수
+	@Override
+	public int count() throws Exception {
+	 return sql.selectOne(namespace + ".count"); 
+	}	
+	
+	// 게시물 목록 + 페이징
+	@Override
+	public List<BoardVO> listPage(int displayPost, int postNum) throws Exception {
+
+	 HashMap data = new HashMap();
+	  
+	 data.put("displayPost", displayPost);
+	 data.put("postNum", postNum);
+	  
+	 return sql.selectList(namespace + ".listPage", data);
+	}
 		
 }

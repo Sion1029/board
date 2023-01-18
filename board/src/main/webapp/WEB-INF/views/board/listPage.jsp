@@ -92,6 +92,9 @@
 <title>Board</title>
 </head>
 <body>
+	<div id="nav">
+	 <%@ include file="../include/nav.jsp" %>
+	</div>
 	<div>
 		<div class="atag">
 			<p>
@@ -99,12 +102,6 @@
 				<input type="button" value="선택삭제" onclick="deleteValue();">
 			</p>
 		</div>
-	</div>
-
-
-	<!-- 메뉴 인클루드 -->
-	<div id="nav">
-		<%@ include file="../include/nav.jsp" %>
 	</div>
 
 	<div class="table">
@@ -139,14 +136,13 @@
 		</tbody>	
 	</table>
 	
-	<div>
-	 <c:forEach begin="1" end="${pageNum}" var="num">
-	    <span>
-	     <a href="/board/listPage?num=${num}">${num}</a>
-	    </span>
-	 </c:forEach>
-	</div>
-	
+		<div>
+		 <c:forEach begin="1" end="${pageNum}" var="num">
+		    <span>
+		     <a href="/board/listPage?num=${num}">${num}</a>
+		    </span>
+		 </c:forEach>
+		</div>
 	</div>
 </body>
 </html>

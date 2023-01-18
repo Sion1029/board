@@ -92,6 +92,9 @@
 <title>Board</title>
 </head>
 <body>
+	<div id="nav">
+	 <%@ include file="../include/nav.jsp" %>
+	</div>
 	<div>
 		<div class="atag">
 			<p>
