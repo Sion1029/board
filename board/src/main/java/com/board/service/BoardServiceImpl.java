@@ -77,5 +77,11 @@ public  class BoardServiceImpl implements BoardService {
 	public int searchCount(String searchType, String keyword) throws Exception {
 	 return dao.searchCount(searchType, keyword);
 	}
+
+	// 조회 수 구현
+	@Override
+	public int viewCntIncrease(int bno) throws Exception {
+		return dao.viewCntIncrease(bno);
+	}
 	
 }

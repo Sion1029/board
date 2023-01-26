@@ -1,12 +1,14 @@
 package com.board.controller;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,15 +59,18 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
-	// 게시물 조회
+	// 게시물 조회 + 조회 수 
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
 	public void getView(@RequestParam("bno") int bno, Model model) throws Exception {
 		
 		BoardVO vo = service.view(bno);
 		
+		service.viewCntIncrease(bno);
+		
 		model.addAttribute("view", vo);
 	}
-	
+		
+		
 	// 게시물 수정
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)
 	public void getModify(@RequestParam("bno") int bno, Model model) throws Exception {
@@ -207,5 +212,7 @@ public class BoardController {
 		model.addAttribute("searchType", searchType);
 		model.addAttribute("keyword", keyword);
 	}
+	
+	
 	
 }

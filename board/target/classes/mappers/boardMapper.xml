@@ -38,6 +38,7 @@ UPDATE tbl_board
 	WHERE bno = #{bno}
 </update>
 
+
 <!-- 게시물 삭제 -->
 <!--<delete id="delete" parameterType="int"> -->
 <delete id="delete">
@@ -106,5 +107,12 @@ DELETE FROM tbl_board WHERE bno = #{bno}
 	</if>
  
 </select>
+
+<!-- 조회 수 구현 -->
+<update id="viewCntIncrease" parameterType="com.board.domain.BoardVO">
+UPDATE tbl_board
+	SET viewCnt = viewCnt + 1
+	WHERE bno = #{bno}
+</update>
 
 </mapper>

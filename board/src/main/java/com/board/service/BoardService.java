@@ -36,4 +36,7 @@ public interface BoardService {
 	
 	// 게시물 총 갯수 + 검색 적용
 	public int searchCount(String searchType, String keyword) throws Exception;
+	
+	// 조회수 구현
+	public int viewCntIncrease(int bno) throws Exception;
 }
