@@ -16,14 +16,14 @@ order by regDate desc
 <!-- 게시물 작성 -->
 <insert id="write" parameterType="com.board.domain.BoardVO">
  insert into
-  tbl_board(title, content, writer, eduCd)
-   values(#{title}, #{content}, #{writer}, #{eduCd})
+  tbl_board(title, content, writer, eduCd, sportsCd)
+   values(#{title}, #{content}, #{writer}, #{eduCd}, #{sportsCd})
 </insert>
 
 <!-- 게시물 조회 -->
 <select id="view" parameterType="int" resultType="com.board.domain.BoardVO">
 SELECT
-	bno, title, content, writer, regDate, viewCnt, eduCd
+	bno, title, content, writer, regDate, viewCnt, eduCd, sportsCd
 FROM 
 	tbl_board
 WHERE 

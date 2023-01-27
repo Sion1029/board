@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import javax.inject.Inject;
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,7 @@ import com.board.service.BoardService;
 @RequestMapping("/board/*")
 public class BoardController {
 	
+	private static final ServletRequest request = null;
 	@Inject
 	private BoardService service;
 
@@ -54,14 +56,13 @@ public class BoardController {
 	// 게시물 작성 post
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public String postWrite(BoardVO vo) throws Exception {
-		System.out.println("vo=="+vo.toString());
 		
 		service.write(vo);		
 		
 		return "redirect:/board/list";
 	}
 	
-	// 게시물 조회 + 조회 수 
+	// 게시물 조회 + 조회 수 + 글 작성 선택
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
 	public void getView(@RequestParam("bno") int bno, Model model) throws Exception {
 		
@@ -70,6 +71,7 @@ public class BoardController {
 		service.viewCntIncrease(bno);
 		
 		model.addAttribute("view", vo);
+		
 	}
 		
 		

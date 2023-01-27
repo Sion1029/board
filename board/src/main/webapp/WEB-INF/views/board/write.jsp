@@ -18,9 +18,13 @@
 	
 		<form method="post">
 		
-		<input type="radio" id="" name="eduCd" value="H"> 고등학생
-		<input type="radio" id="" name="eduCd" value="C"> 대학생
-		<input type="radio" id="" name="eduCd" value="E"> 대학원생<br />
+		<input type="radio" name="eduCd" value="H"> 고등학생
+		<input type="radio" name="eduCd" value="C"> 대학생
+		<input type="radio" name="eduCd" value="E"> 대학원생 <br />
+		
+		<input type="checkbox" name="sportsCd" id="one" value="S"> 축구
+		<input type="checkbox" name="sportsCd" id="one" value="B"> 농구
+		<input type="checkbox" name="sportsCd" id="one" value="V"> 배구 <br />
 		
 		<label>제목</label>
 		<input type="text" name="title"/><br />
@@ -35,5 +39,6 @@
 		<button type="submit">작성</button>
 		<button onclick="location.href='/board/write'">돌아가기</button>
 		</form>
+		
 </body>
 </html>

@@ -23,6 +23,8 @@ public class BoardVO {
 	private Date regDate;
 	private int viewCnt;
 	private String eduCd;
+	private String sportsCd;
+	
 	
 	public int getBno() {
 		return bno;
@@ -66,12 +68,18 @@ public class BoardVO {
 	public void setEduCd(String eduCd) {
 		this.eduCd = eduCd;
 	}
+	public String getSportsCd() {
+		return sportsCd;
+	}
+	public void setSportsCd(String sportsCd) {
+		this.sportsCd = sportsCd;
+	}
 	@Override
 	public String toString() {
 		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer + ", regDate="
-				+ regDate + ", viewCnt=" + viewCnt + ", eduCd=" + eduCd + "]";
+				+ regDate + ", viewCnt=" + viewCnt + ", eduCd=" + eduCd + ", sportsCd=" + sportsCd + "]";
 	}
-	
-	
+
+
 	
 }

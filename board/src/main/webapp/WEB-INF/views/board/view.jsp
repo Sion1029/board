@@ -1,4 +1,6 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,13 +19,21 @@
 	</div>
 <form method="post">
 
-<input type="radio" name="eduCd" value="H" 
-<c:if test="${view.eduCd eq 'H'}">checked</c:if>> 고등학생
-<input type="radio" name="eduCd" value="C" 
-<c:if test="${view.eduCd eq 'C'}">checked</c:if>> 대학생 
-<input type="radio" name="eduCd" value="E" 
-<c:if test="${view.eduCd eq 'E'}">checked</c:if>> 대학원생
-<br />
+<input type="radio" name="eduCd" <c:if test="${view.eduCd eq 'H'}"> checked </c:if>> 고등학생
+<input type="radio" name="eduCd" <c:if test="${view.eduCd eq 'C'}"> checked </c:if>> 대학생 
+<input type="radio" name="eduCd" <c:if test="${view.eduCd eq 'E'}"> checked </c:if>> 대학원생 <br />
+
+
+
+<input type="checkbox" name="sportsCd" <c:if test = "${fn:contains(view.sportsCd, 'S')}"> checked </c:if>> 축구
+<input type="checkbox" name="sportsCd" <c:if test = "${fn:contains(view.sportsCd, 'B')}"> checked </c:if>> 농구
+<input type="checkbox" name="sportsCd" <c:if test = "${fn:contains(view.sportsCd, 'V')}"> checked </c:if>> 배구
+
+<%-- <input type="checkbox" name="sportsCd" <c:if test="${view.sportsCd eq 'S'}"> checked </c:if>> 축구 --%>
+<%-- <input type="checkbox" name="sportsCd" <c:if test="${view.sportsCd eq 'B'}"> checked </c:if>> 농구 --%>
+<%-- <input type="checkbox" name="sportsCd" <c:if test="${view.sportsCd eq 'V'}"> checked </c:if>> 배구 --%>
+
+ <br />
 
 
 <label>제목</label>

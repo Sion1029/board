@@ -34,7 +34,8 @@ public class BoardDAOImpl implements BoardDAO {
 	
 	// 게시물 조회
 	public BoardVO view(int bno) throws Exception {
-		
+		// 쿼리 결과로 레코드가 하나만 반환
+		// selectOne : 쿼리 결과가 없으면 null을 반환
 		return sql.selectOne(namespace + ".view", bno);
 	}
 	
@@ -105,5 +106,7 @@ public class BoardDAOImpl implements BoardDAO {
 	public int viewCntIncrease(int bno) throws Exception {
 		return sql.update(namespace + ".viewCntIncrease", bno);		
 	}
+	
+	
 
 }
