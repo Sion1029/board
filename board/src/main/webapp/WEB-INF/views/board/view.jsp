@@ -17,6 +17,15 @@
 	</div>
 <form method="post">
 
+<input type="radio" name="eduCd" value="H" 
+<c:if test="${view.eduCd eq 'H'}">checked</c:if>> 고등학생
+<input type="radio" name="eduCd" value="C" 
+<c:if test="${view.eduCd eq 'C'}">checked</c:if>> 대학생 
+<input type="radio" name="eduCd" value="E" 
+<c:if test="${view.eduCd eq 'E'}">checked</c:if>> 대학원생
+<br />
+
+
 <label>제목</label>
 <input type="text" name="title" value="${view.title}"/><br />
 

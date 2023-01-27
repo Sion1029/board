@@ -12,11 +12,15 @@
 <title>게시물 작성</title>
 </head>
 <body>	
-	<div id="nav">
-	 <%@ include file="../include/nav.jsp" %>
-	</div>
+		<div id="nav">
+		 <%@ include file="../include/nav.jsp" %>
+		</div>
 	
 		<form method="post">
+		
+		<input type="radio" id="" name="eduCd" value="H"> 고등학생
+		<input type="radio" id="" name="eduCd" value="C"> 대학생
+		<input type="radio" id="" name="eduCd" value="E"> 대학원생<br />
 		
 		<label>제목</label>
 		<input type="text" name="title"/><br />

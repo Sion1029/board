@@ -9,19 +9,21 @@
 select
   bno, title, content, writer, regDate, viewCnt
 from tbl_board
+where 1=1
+order by regDate desc
 </select>
 
 <!-- 게시물 작성 -->
 <insert id="write" parameterType="com.board.domain.BoardVO">
  insert into
-  tbl_board(title, content, writer)
-   values(#{title}, #{content}, #{writer})
+  tbl_board(title, content, writer, eduCd)
+   values(#{title}, #{content}, #{writer}, #{eduCd})
 </insert>
 
 <!-- 게시물 조회 -->
 <select id="view" parameterType="int" resultType="com.board.domain.BoardVO">
 SELECT
-	bno, title, content, writer, regDate, viewCnt
+	bno, title, content, writer, regDate, viewCnt, eduCd
 FROM 
 	tbl_board
 WHERE 

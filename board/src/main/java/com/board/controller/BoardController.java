@@ -54,6 +54,8 @@ public class BoardController {
 	// 게시물 작성 post
 	@RequestMapping(value = "/write", method = RequestMethod.POST)
 	public String postWrite(BoardVO vo) throws Exception {
+		System.out.println("vo=="+vo.toString());
+		
 		service.write(vo);		
 		
 		return "redirect:/board/list";
